@@ -15,17 +15,22 @@
         const messages = document.getElementById('messages')
 
         const getUsername = async () => {
-            const username = localStorage.getItem('username')
+            const username = localStorage.getItem('username');
             if (username) {
-                return username
+                return username;
             }
 
-            const res = await fetch('https://random-data-api.com/api/users/random_user')
-            const { username: randomUsername } = await res.json()
+            try {
+                const res = await fetch('https://random-data-api.com/api/users/random_user');
+                const { username: randomUsername } = await res.json();
 
-            localStorage.setItem('username', randomUsername)
-            return randomUsername
-        }
+                localStorage.setItem('username', randomUsername);
+                return randomUsername;
+            } catch (error) {
+                console.error('Error al obtener el nombre de usuario:', error);
+                throw error; // Rechaza la promesa en caso de error
+            }
+        };
         const socket =  io({
             auth: {
                 username: await getUsername(),

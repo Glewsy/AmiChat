@@ -22,7 +22,7 @@ const io = new Server(server, {
 
 const db = createClient({
   url: "libsql://topical-nighthawk-glewsy.turso.io",
-  authToken: "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpYXQiOiIyMDIzLTExLTEyVDAxOjM2OjA1Ljg4NDAwNzQxNloiLCJpZCI6Ijc1OTk5YTBhLTgwZmItMTFlZS05ZTUxLWNlZTVhNmVjZDg4NCJ9.1PdqDULe73KdfS8uiLI3RSlM7HeFyxVPrvwi9wxj4at0P-9-frWDbDjS0AnX2CDtocO8vKNJ_iW1nLBcPcVwDA"
+  authToken: "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpYXQiOiIyMDIzLTExLTE3VDAxOjQzOjI3LjA3OTU2NjQzOFoiLCJpZCI6Ijc1OTk5YTBhLTgwZmItMTFlZS05ZTUxLWNlZTVhNmVjZDg4NCJ9.zy1On3XHhwbk6qJWVoEyuVLSDoGr047zCsl5qqL--WSBjhkEcc-cTSi25vZFjmv1XgRSVCe1mATWXPimPsrmCg"
 })
 
 await db.execute(`
