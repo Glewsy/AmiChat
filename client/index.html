@@ -7,9 +7,7 @@
     <title>amiChat</title>
     <script type="module">
         import { io } from 'https://cdn.socket.io/4.3.2/socket.io.esm.min.js';
-        const socket = io
-        io.set('transports', ['websocket']);
-        io.set('upgrade', false);
+        
 
 
         const form = document.getElementById('form')
@@ -33,7 +31,7 @@
                 throw error; // Rechaza la promesa en caso de error
             }
         };
-        socket = io({
+        const socket = io({
             auth: {
                 username: await getUsername(),
                 serverOffset: 0
