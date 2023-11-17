@@ -8,9 +8,9 @@ import { createServer } from 'node:http'
 
 
 
-
 dotenv.config()
 
+const express = require('express');
 const app = express();
 const server = createServer(app)
 const io = new Server(server, {
@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS messages(
 `)
 
 app.use(logger('dev'))
+app.use(express.static('./client'));
 
 io.on('connection', async (socket) => {
   socket.on('disconnect', () => {
