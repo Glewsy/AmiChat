@@ -10,7 +10,6 @@ import { createServer } from 'node:http'
 
 dotenv.config()
 
-const express = require('express');
 const app = express();
 const server = createServer(app)
 const io = new Server(server, {
